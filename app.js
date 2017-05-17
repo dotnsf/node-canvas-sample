@@ -25,6 +25,7 @@ app.get( '/generate_image', function( req, res ){
     ctx.lineTo( 200, 200 );
     ctx.strokeStyle = 'red';
     ctx.stroke();
+    ctx.fillText( "ハローワールド！", 10, 30 );
 
     var b64 = canvas.toDataURL().split( ',' )[1];
     var buf = new Buffer( b64, 'base64' );
