@@ -25,6 +25,18 @@ app.get( '/generate_image', function( req, res ){
     ctx.lineTo( 200, 200 );
     ctx.strokeStyle = 'red';
     ctx.stroke();
+
+    //ctx.font = 'bold 14px "さざなみゴシック"';
+    //ctx.font = 'bold 14px "Sazanami Gothic"';
+    //ctx.font = 'bold 14px "sans-serif"';
+    //ctx.font = '"さざなみゴシック"';
+    //ctx.font = '"Takao Pゴシック"';
+    //ctx.font = '"/home/vcap/app/.fonts/sazanami-gothic.ttf"';
+
+    var Font = Canvas.Font;
+    var myFont = new Font( 'myFont', 'fonts/sazanami-gothic.ttf' );
+    ctx.addFont( myFont );
+    ctx.font = '20px myFont';
     ctx.fillText( "ハローワールド！", 10, 30 );
 
     var b64 = canvas.toDataURL().split( ',' )[1];
